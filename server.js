@@ -16,7 +16,7 @@ server.requestHandler(function (req) {
 
 var sockJSServer = vertx.createSockJSServer(server);
 // Create a SockJS bridge which lets everything through (be careful!)
-sockJSServer.bridge({prefix: "/eventbus"}, [
+sockJSServer.bridge({prefix: "/leaderboard"}, [
     {}
 ], [
     {}

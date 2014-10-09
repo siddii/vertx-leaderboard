@@ -29,33 +29,39 @@ function closeConn() {
 
 function openConn() {
     if (!eb) {
-        eb = new vertx.EventBus("http://localhost:8080/eventbus");
+        eb = new vertx.EventBus("/leaderboard");
 
         eb.onopen = function () {
-            $("#status_info").text("Connected");
+            console.log('#### Connected');
         };
 
         eb.onclose = function () {
-            $("#status_info").text("Not connected");
+            console.log('#### Closed');
             eb = null;
         };
     }
 }
 
-$(document).ready(function () {
-    $("#sendButton").click(function () {
-        publish($("#sendAddress").val(), $("#sendMessage").val());
-    });
+//$(document).ready(function () {
+//    $("#sendButton").click(function () {
+//        publish($("#sendAddress").val(), $("#sendMessage").val());
+//    });
+//
+//    $("#subscribeButton").click(function () {
+//        subscribe($("#subscribeAddress").val());
+//    });
+//
+//    $("#closeButton").click(function () {
+//        closeConn();
+//    });
+//
+//    $("#connectButton").click(function () {
+//        openConn();
+//    });
+//});
 
-    $("#subscribeButton").click(function () {
-        subscribe($("#subscribeAddress").val());
-    });
-
-    $("#closeButton").click(function () {
-        closeConn();
-    });
-
-    $("#connectButton").click(function () {
-        openConn();
-    });
+$(function (){
+   openConn();
 });
+
+
