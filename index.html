@@ -10,6 +10,7 @@
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
     <script type="text/javascript" src="vertxbus.js"></script>
     <script type="text/javascript" src="eb_client.js"></script>
+    <script type="text/javascript" src="app.js"></script>
 
     <style type="text/css">
         .btn-add {
@@ -17,23 +18,37 @@
         }
     </style>
 </head>
-<body>
+<body ng-app="Leaderboard">
 
-<div class="container">
+<div class="container" ng-controller="LeaderboardController">
     <h1 class="center">JavaScript Leaderboard</h1>
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">What's your favorite framework?</h3>
         </div>
         <div class="panel-body">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Up Vote</th>
+                    <th>Down Vote</th>
+                </tr>
+                </thead>
+                <tr ng-repeat="framework in frameworks">
+                    <td>{{framework.name}}</td>
+                    <td>{{framework.upVote}} <button class="btn btn-default fa fa-thumbs-o-up pull-right"></button></td>
+                    <td>{{framework.downVote}} <button class="btn btn-default fa fa-thumbs-o-down pull-right"></button></td>
+                </tr>
+            </table>
         </div>
     </div>
 
     <form class="form-inline" role="form">
         <div class="form-group">
             <div class="input-group">
-                <input class="form-control txt-framework" type="text" placeholder="Add you favorite framework">
-                <div class="input-group-addon btn-add">Add</div>
+                <input class="form-control txt-framework" ng-model="framework" type="text" placeholder="Add you favorite framework">
+                <div class="input-group-addon btn-add" ng-click="addFramework();">Add</div>
             </div>
         </div>
     </form>

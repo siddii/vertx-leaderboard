@@ -1,26 +1,27 @@
 'use strict';
 
 var eb = null;
+var address = "js-framework";
 
-function publish(address, message) {
+function publish(message) {
     initConn();
     eb.publish(address, {text: message});
 }
 
-function subscribe(address) {
+function subscribe(cb) {
     initConn();
-    eb.registerHandler(address, function (msg, replyTo) {
-        console.log('Message = ', msg);
+    eb.registerHandler(address, function (response) {
+        cb(response);
     });
 }
 
-function initConn() {
+function initConn(cb) {
     if (!eb) {
         eb = new vertx.EventBus("/leaderboard");
 
         eb.onopen = function () {
             console.log('#### Connected');
-            subscribe("js-framework");
+            subscribe(cb);
         };
 
         eb.onclose = function () {
@@ -29,13 +30,3 @@ function initConn() {
         };
     }
 }
-
-$(function (){
-    $('.btn-add').click(function (){
-        var val = $('.txt-framework').val();
-        publish("js-framework", val);
-    });
-    initConn();
-});
-
-
