@@ -15,15 +15,6 @@ server.requestHandler(function (req) {
 });
 
 var sockJSServer = vertx.createSockJSServer(server);
-// Create a SockJS bridge which lets everything through (be careful!)
-sockJSServer.bridge({prefix: "/leaderboard"}, [
-    {}
-], [
-    {}
-]);
-
-sockJSServer.on('socket-created', function () {
-    console.log('Leaderboard server socket created...');
-});
+sockJSServer.bridge({prefix: "/leaderboard"}, [{}], [{}]);
 
 server.listen(9090);
