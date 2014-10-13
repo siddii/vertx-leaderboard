@@ -4,6 +4,7 @@ var vertx = require('vertx');
 
 var server = vertx.createHttpServer();
 var console = require('vertx/console');
+var eb = require("vertx/event_bus");
 
 //load some dummy data
 load('data.js');
@@ -27,8 +28,12 @@ var sockJSServer = vertx.createSockJSServer(server);
 sockJSServer.bridge({prefix: "/leaderboard"}, [{}], [{}]);
 
 sockJSServer.on('socket-created', function (msg) {
-    console.log('##### Socket Created');
     return true;
+});
+
+
+eb.registerHandler("js-framework", function(message) {
+    data = message.text;
 });
 
 server.listen(9090);
