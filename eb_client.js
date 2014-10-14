@@ -1,32 +1,32 @@
 'use strict';
 
-var eb = null;
-var address = "js-framework";
+var eventBus = null;
+var address = "js-frameworks";
 
 function publish(message) {
     initConn();
-    eb.publish(address, {text: message});
+    eventBus.publish(address, {text: message});
 }
 
 function subscribe(cb) {
     initConn();
-    eb.registerHandler(address, function (response) {
+    eventBus.registerHandler(address, function (response) {
         cb(response);
     });
 }
 
 function initConn(cb) {
-    if (!eb) {
-        eb = new vertx.EventBus("/leaderboard");
+    if (!eventBus) {
+        eventBus = new vertx.EventBus("/leaderboard");
 
-        eb.onopen = function () {
-            console.log('#### Connected');
+        eventBus.onopen = function () {
+            console.log('Eventbus Connected!');
             subscribe(cb);
         };
 
-        eb.onclose = function () {
-            console.log('#### Closed');
-            eb = null;
+        eventBus.onclose = function () {
+            console.log('Eventbus Closed');
+            eventBus = null;
         };
     }
 }
