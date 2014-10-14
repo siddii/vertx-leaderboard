@@ -3,6 +3,7 @@
 var vertx = require('vertx');
 
 var server = vertx.createHttpServer();
+var container = require('vertx/container');
 var eventBus = require("vertx/event_bus");
 
 //load some dummy data
@@ -34,4 +35,4 @@ eventBus.registerHandler("js-frameworks", function(message) {
     data = message.text;
 });
 
-server.listen(9090);
+server.listen(container.env['PORT'] ? container.env['PORT'] : 9090);

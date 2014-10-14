@@ -1,0 +1,14 @@
+{
+    "name": "JavaScript Leaderboard",
+    "description": "Sample application demonstrating Vert.x Event Bus with AngularJS data binding",
+    "keywords": [
+        "Vert.x",
+        "Angular",
+        "Reactive"
+    ],
+    "website": "https://github.com/siddii/vertx-leaderboard",
+    "repository": "https://github.com/siddii/vertx-leaderboard",
+    "env": {
+        "BUILDPACK_URL": "https://github.com/tomaslin/heroku-buildpack-vertx-jdk7"
+    }
+}
