@@ -14,18 +14,31 @@
         body {
             padding-top: 20px;
         }
+
         .btn-add {
             cursor: pointer;
         }
+
         .input-group {
             width: 280px;
+        }
+
+        .header {
+            font-size: 20px;
+            color: #000;
         }
     </style>
 </head>
 <body ng-app="Leaderboard">
 
 <div class="container" ng-controller="LeaderboardController">
-    <h1 class="text-center">JavaScript Leaderboard</h1>
+    <div class="header pull-right">
+        <a target="_new" href="https://github.com/siddii/vertx-leaderboard"><i class="fa fa-github"></i></a>
+    </div>
+    <div class="page-header">
+        <h1 class="text-center">JavaScript Leaderboard</h1>
+    </div>
+
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">What's your favorite framework?</h3>
@@ -41,8 +54,12 @@
                 </thead>
                 <tr ng-repeat="framework in frameworks">
                     <td>{{framework.name}}</td>
-                    <td class="text-center">{{framework.upVote}} &nbsp;&nbsp;&nbsp;<button ng-click="upVote(framework);" class="btn btn-default fa fa-thumbs-o-up"></button></td>
-                    <td class="text-center">{{framework.downVote}} &nbsp;&nbsp;&nbsp;<button ng-click="downVote(framework);" class="btn btn-default fa fa-thumbs-o-down"></button></td>
+                    <td class="text-center">{{framework.upVote}} &nbsp;&nbsp;&nbsp;
+                        <button ng-click="upVote(framework);" class="btn btn-default fa fa-thumbs-o-up"></button>
+                    </td>
+                    <td class="text-center">{{framework.downVote}} &nbsp;&nbsp;&nbsp;
+                        <button ng-click="downVote(framework);" class="btn btn-default fa fa-thumbs-o-down"></button>
+                    </td>
                 </tr>
             </table>
         </div>
@@ -51,7 +68,9 @@
     <form class="form-inline" role="form">
         <div class="form-group">
             <div class="input-group">
-                <input class="form-control txt-framework" ng-model="framework" type="text" placeholder="Add you favorite framework">
+                <input class="form-control txt-framework" ng-model="framework" type="text"
+                       placeholder="Add you favorite framework">
+
                 <div class="input-group-addon btn-add" ng-click="addFramework();">Add</div>
             </div>
         </div>
