@@ -35,4 +35,4 @@ eventBus.registerHandler("js-frameworks", function(message) {
     data = message.text;
 });
 
-server.listen(container.env['PORT'] ? container.env['PORT'] : 9090);
+server.listen(parseInt(container.env.get('PORT') ? container.env.get('PORT') : '9090'));
