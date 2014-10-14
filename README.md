@@ -7,12 +7,11 @@ Sample app demonstrating Vert.x's Event Bus & AngularJS data binding
 The easiest way to test this app is running it on Heroku.
 * Get a Free developer account with Heroku (if you don't have one)
 * Click on the "Deploy to Heroku" button at the top
-* Navigate to the application url
+* Navigate to the deployed application url
 
 ## Running the app locally
 ```bash
 vertx run server.js
 ```
-
-* Go to http://localhost:9090
+* Navigate to [http://localhost:9090](http://localhost:9090)
 
