@@ -11,17 +11,12 @@ var data = [
         "downVote": 0
     },
     {
-        "name": "Knockout",
+        "name": "CanJS",
         "upVote": 0,
         "downVote": 0
     },
     {
-        "name": "Backbone",
-        "upVote": 0,
-        "downVote": 0
-    },
-    {
-        "name": "NodeJS",
+        "name": "ExtJS",
         "upVote": 0,
         "downVote": 0
     },

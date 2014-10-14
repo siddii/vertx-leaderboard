@@ -18,26 +18,23 @@ angular.module('Leaderboard', []).controller("LeaderboardController", ['$scope',
         publish(frameworks);
     };
 
-    $scope.upVote = function (framework) {
+    function addVote(name, vote) {
         var frameworks = angular.copy($scope.frameworks);
-        for(var i=0; i < frameworks.length; i++) {
-            if (frameworks[i].name === framework.name) {
-                frameworks[i].upVote++;
+        for (var i = 0; i < frameworks.length; i++) {
+            if (frameworks[i].name === name) {
+                frameworks[i][vote]++;
                 break;
             }
         }
         publish(frameworks);
+    }
+
+    $scope.upVote = function (framework) {
+        addVote(framework.name, 'upVote');
     };
 
     $scope.downVote = function (framework) {
-        var frameworks = angular.copy($scope.frameworks);
-        for(var i=0; i < frameworks.length; i++) {
-            if (frameworks[i].name === framework.name) {
-                frameworks[i].downVote++;
-                break;
-            }
-        }
-        publish(frameworks);
+        addVote(framework.name, 'downVote');
     };
 
     initConn(function (response) {
