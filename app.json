@@ -1,6 +1,7 @@
 {
     "name": "JavaScript Leaderboard",
     "description": "Sample application demonstrating Vert.x Event Bus with AngularJS data binding",
+    "logo": "http://vertx.io/logo-white-big.png",
     "keywords": [
         "Vert.x",
         "Angular",
