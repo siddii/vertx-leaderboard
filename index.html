@@ -21,7 +21,7 @@
 <body ng-app="Leaderboard">
 
 <div class="container" ng-controller="LeaderboardController">
-    <h1 class="center">JavaScript Leaderboard</h1>
+    <h1 class="text-center">JavaScript Leaderboard</h1>
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">What's your favorite framework?</h3>
@@ -31,14 +31,14 @@
                 <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Up Vote</th>
-                    <th>Down Vote</th>
+                    <th class="text-center">Up Vote</th>
+                    <th class="text-center">Down Vote</th>
                 </tr>
                 </thead>
                 <tr ng-repeat="framework in frameworks">
                     <td>{{framework.name}}</td>
-                    <td>{{framework.upVote}} <button class="btn btn-default fa fa-thumbs-o-up pull-right"></button></td>
-                    <td>{{framework.downVote}} <button class="btn btn-default fa fa-thumbs-o-down pull-right"></button></td>
+                    <td class="text-center">{{framework.upVote}} &nbsp;&nbsp;&nbsp;<button ng-click="upVote(framework);" class="btn btn-default fa fa-thumbs-o-up"></button></td>
+                    <td class="text-center">{{framework.downVote}} &nbsp;&nbsp;&nbsp;<button ng-click="downVote(framework);" class="btn btn-default fa fa-thumbs-o-down"></button></td>
                 </tr>
             </table>
         </div>
