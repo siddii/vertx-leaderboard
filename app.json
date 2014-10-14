@@ -5,7 +5,7 @@
     "keywords": [
         "Vert.x",
         "Angular",
-        "Reactive"
+        "Event Bus"
     ],
     "env": {
         "BUILDPACK_URL": "https://github.com/mthenw/heroku-buildpack-vertx.git"
