@@ -1,17 +1,24 @@
 vertx-leaderboard  [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 =================
-Sample app demonstrating Vert.x's Event Bus & AngularJS data binding
+Sample app demonstrating Vert.x distributed Event Bus & AngularJS data binding
+
+## Introduction
+This sample app demonstrates the power of Vert.x distributed event bus along with AngularJS data binding.
+Launch the app in multiple tabs or browser windows & see what's happening. Cool eh?
 
 
-## Running the app
+## Running the app on cloud
 The easiest way to test this app is running it on Heroku.
 * Get a Free developer account with Heroku (if you don't have one)
 * Fork this repo and/or Click on the "Deploy to Heroku" button at the top
 * Navigate to the deployed application url
 
-## Running the app locally
+## Running the app locally (if you have vertx installed)
 ```bash
 vertx run server.js
 ```
 * Navigate to [http://localhost:9090](http://localhost:9090)
 
+
+### Build pack
+Thanks to the build pack - https://github.com/mthenw/heroku-buildpack-vertx.git for making the heroku deployment possible :)
