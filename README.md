@@ -20,4 +20,4 @@ vertx run server.js
 
 
 ### Build pack
-Thanks to the build pack - https://github.com/mthenw/heroku-buildpack-vertx.git for making the heroku deployment possible :)
+Thanks to the build pack - https://github.com/mthenw/heroku-buildpack-vertx.git for easier heroku deployment :)
