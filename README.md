@@ -6,6 +6,9 @@ Sample app demonstrating the power of [Vert.x's](http://vertx.io/) *distributed 
 This sample app demonstrates the power of Vert.x distributed event bus along with AngularJS data binding.
 Launch the app in multiple tabs or browser windows, play with it & see what happens. Cool eh?
 
+### Demo
+![Vertx Leaderboard Demo](VertxLeaderboard.gif "Demo")
+
 ## Running the app on cloud
 The easiest way to test this app is running it on Heroku.
 * Get a Free developer account with Heroku (if you don't have one)
